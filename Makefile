@@ -34,6 +34,8 @@ endif
 
 CFLAGS += -DSP_VERSION=$(VERSION) -O3 -DSPFLOAT=${SPFLOAT} -std=c99
 CFLAGS += -I$(INTERMEDIATES_PREFIX)/h -Ih -I/usr/local/include -fPIC
+CFLAGS += -mlittle-endian -mthumb -mcpu=cortex-m4 -mthumb-interwork
+CFLAGS += -mfloat-abi=hard -mfpu=fpv4-sp-d16
 UTIL += $(INTERMEDIATES_PREFIX)/util/wav2smp
 
 $(INTERMEDIATES_PREFIX) \
